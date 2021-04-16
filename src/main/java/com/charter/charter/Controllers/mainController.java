@@ -1,5 +1,6 @@
 package com.charter.charter.Controllers;
 
+import com.charter.charter.models.Customer;
 import com.charter.charter.models.Transaction;
 import com.charter.charter.models.data.CustomerDao;
 import com.charter.charter.models.data.TransactionDao;
@@ -25,7 +26,9 @@ public class mainController {
     public String index(Model model) {
         model.addAttribute("title", "Point System");
         Iterable<Transaction> transactionList = transactionDao.findAll();
-        model.addAttribute("list", transactionList);
+        Iterable<Customer> customerList = customerDao.findAll();
+        model.addAttribute("transactionList", transactionList);
+        model.addAttribute("customerList", customerList);
         return "index";
     }
 }

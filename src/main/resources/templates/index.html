@@ -5,7 +5,7 @@
     <title th:text="${title}">Customer Points</title>
 
 
-    <link rel="stylesheet" href="/css/transactionTable.css"/>
+    <link rel="stylesheet" href="/css/tables.css"/>
 
 
 
@@ -17,11 +17,29 @@
     <tr>
         <th>Name</th>
         <th>Receipt</th>
+        <th>Date of Transaction</th>
+        <th>Within Past Three months</th>
         <th>Points Earned</th>
     </tr>
-    <tr th:each="item : ${list}">
+    <tr th:each="item : ${transactionList}">
         <td th:text="${item.customer.name}"></td>
-        <td th:text="${item.receipt}"></td>
+        <td th:text="${'$' + item.receipt}"></td>
+        <td th:text="${item.date}"></td>
+        <div th:switch="${item.old}">
+            <td id="dateIsOld" th:case="true">No</td>
+            <td id="dateIsRecent" th:case="false">Yes</td>
+        </div>
+        <td th:text="${item.points}"></td>
+
+    </tr>
+</table>
+<table id="pointTotals">
+    <tr>
+        <th>Name</th>
+        <th>Total Points Earned</th>
+    </tr>
+    <tr th:each="item : ${customerList}">
+        <td th:text="${item.name}"></td>
         <td th:text="${item.points}"></td>
     </tr>
 </table>

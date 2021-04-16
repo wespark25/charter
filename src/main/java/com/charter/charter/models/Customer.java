@@ -18,6 +18,9 @@ public class Customer {
     @Column
     private String name;
 
+    @Column
+    private int points;
+
     @OneToMany
     @JoinColumn(name = "customer_id")
     private List<Transaction> transactions = new ArrayList<>();
@@ -28,6 +31,7 @@ public class Customer {
     public Customer(String name) {
         this.name = name;
         this.transactions = transactions;
+        this.points = 0;
     }
 
     public Customer(int id) {
@@ -49,5 +53,17 @@ public class Customer {
 
     public List<Transaction> getTransactions(){
         return transactions;
+    }
+
+    public int getPoints() {
+        return points;
+    }
+
+    public void setPoints(int points) {
+        this.points = points;
+    }
+
+    public void addpoints(int points){
+        this.points += points;
     }
 }
