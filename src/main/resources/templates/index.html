@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8"/>
+    <title th:text="${title}">Customer Points</title>
+
+
+    <link rel="stylesheet" href="/css/transactionTable.css"/>
+
+
+
+</head>
+
+<body class>
+<h1>Points!</h1>
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Receipt</th>
+        <th>Points Earned</th>
+    </tr>
+    <tr th:each="item : ${list}">
+        <td th:text="${item.name}"></td>
+        <td th:text="${item.receipt}"></td>
+        <td th:text="${item.points}"></td>
+    </tr>
+</table>
+
+</body>
+</html>
