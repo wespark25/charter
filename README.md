@@ -1,8 +1,8 @@
-String name as ID is not preferable
+![Screen Shot 2021-04-16 at 11 32 41 AM](https://user-images.githubusercontent.com/43556685/115061019-31af4400-9eae-11eb-9edf-4dbb8f2f7369.png)
 
 How to Use:
- 
- Set up  a local database with the information provided in /charter/src/main/resources/application.properties.
+
+Set up  a local database with the information provided in /charter/src/main/resources/application.properties.
  
 
 Then all you need to do is run the application and open localhost:8080 on a web browser.
