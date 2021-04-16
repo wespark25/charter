@@ -10,16 +10,18 @@ Then all you need to do is run the application and open localhost:8080 on a web 
 
 How it works:
 
-When the application starts DbInitializer.java, which implements Command Line Runner, checks to see if there are any transaction entities currently exist in the local database. If no entities exist DbInitializer.java will parse a csv file in the same directory. The csv file contains two values per row: a name and an integer. For each row in the csv file, a transaction entity is created. If no corresponding customer entity exists for the name, a customer entity is created. Customer entities have a one to many relationship with transaction entities.
+When the application starts DbInitializer.java, which implements Command Line Runner, checks to see if there are any transaction entities currently exist in the local database. If no entities exist DbInitializer.java will parse a csv file in the same directory. The csv file contains two values per row: a customer name and the amount spent. For each row in the csv file, a transaction entity is created. If no corresponding customer entity exists for the name, a customer entity is created. Customer entities have a one to many relationship with transaction entities. A random date within the past year is generated and assinged to each transaction entity upon creation. When determining the points of each transaction, only transactions with a date within three months prior to importing the csv file will be counted.
 
-The RestController provides only one method because there are no user inputs and only the index page is used.
+The math/logic for determining the point value of each transaction is in the calculatePoints method in Transaction.java. 
 
-Check out my Library project for an example of a more robust use of SpringBoot architecture and CRUD: https://github.com/wespark25/library
+The RestController provides only one method because there are no user input and only index.html is needed.
+
+For an example of a more robust use of SpringBoot architecture and CRUD, check out my Library project: https://github.com/wespark25/library
 
 
 
 
 Ways to improve this project: 
 
-Implement React js as the GUI. Create CRUD methods to add and delete transaction entries.
+Implement React js as the GUI. Create CRUD methods to add and delete transaction entries. Some basic cleanup to make the code look nicer.
 
