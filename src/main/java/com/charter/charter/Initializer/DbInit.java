@@ -6,18 +6,13 @@ import com.charter.charter.models.data.CustomerDao;
 import com.charter.charter.models.data.TransactionDao;
 import org.apache.commons.csv.CSVFormat;
 import org.apache.commons.csv.CSVRecord;
-import org.apache.tomcat.jni.Local;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Service;
 
 import java.io.FileReader;
 import java.io.Reader;
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.time.ZoneId;
 import java.time.ZonedDateTime;
-import java.util.Calendar;
 import java.util.Date;
 import java.util.concurrent.ThreadLocalRandom;
 
@@ -55,7 +50,7 @@ public class DbInit implements CommandLineRunner {
 
 
     }
-    //Method for generating random date within the past year
+    //Method for generating random date within the past year. I merged ideas from two solutions I found online to create something that works for this specific task.
     //I'm keeping the logic for this outside of the Transaction class because, hypothetically, if this is app was actually being used in the future this method would be unnecessary
     public static Date assignDate() {
 

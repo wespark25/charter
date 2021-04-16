@@ -5,6 +5,10 @@ How to Use:
  Set up  a local database with the information provided in /charter/src/main/resources/application.properties.
  
 
+Then all you need to do is run the application and open localhost:8080 on a web browser.
+
+
+
  
 
 
