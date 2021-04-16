@@ -33,8 +33,8 @@ public class DbInit implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
         if (transactionDao.count() == 0) {
-            //TODO Shorten file path
-            Reader in = new FileReader("/Users/wesleypark/Downloads/charter/src/main/java/com/charter/charter/Initializer/transactions.csv");
+            //Found an excellent resource for parsing CSV files from. I also made it so the CSV file is always read in from the correct path.
+            Reader in = new FileReader(System.getProperty("user.dir") + "/src/main/java/com/charter/charter/Initializer/transactions.csv");
             Iterable<CSVRecord> records = CSVFormat.DEFAULT.withHeader().parse(in);
             for (CSVRecord record : records) {
                 String name = record.get("name");

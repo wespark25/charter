@@ -43,7 +43,6 @@ public class Transaction {
         calculatePoints(receipt,date);
     }
 
-    //TODO IMPORTANT! aggregate total points per Customer and display with React js
     public int getReceipt() {
         return receipt;
     }
