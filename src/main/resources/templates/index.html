@@ -20,7 +20,7 @@
         <th>Points Earned</th>
     </tr>
     <tr th:each="item : ${list}">
-        <td th:text="${item.name}"></td>
+        <td th:text="${item.customer.name}"></td>
         <td th:text="${item.receipt}"></td>
         <td th:text="${item.points}"></td>
     </tr>
