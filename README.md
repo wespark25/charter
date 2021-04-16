@@ -14,7 +14,7 @@ When the application starts, DbInitializer.java, which implements Command Line R
 
 The math/logic for determining the point value of each transaction is in the calculatePoints method in Transaction.java. 
 
-The RestController provides only one method because there are no user input and only index.html is needed.
+The RestController provides only one method because there is no user input and only index.html is needed.
 
 For an example of a more robust use of SpringBoot architecture and CRUD, check out my Library project: https://github.com/wespark25/library
 
